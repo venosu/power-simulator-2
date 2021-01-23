@@ -13,11 +13,6 @@ end
 if _G.FarmJumping then 
 Event:FireServer(PowerJumping)
 end
-if _G.FarmMeditating then 
-Event:FireServer(PowerMeditate, true)
-elseif not _G.FarmMeditating then 
-Event:FireServer(PowerMeditate)
-end
 if _G.AutoUpgradeStrength then 
 Event:FireServer(PlayerName, Argument, Strength)
 end 
