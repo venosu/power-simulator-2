@@ -1,0 +1,39 @@
+local Event = game.ReplicatedStorage.RemoteEvent
+local Function = game.ReplicatedStorage.RemoteFunction
+local PowerPunch = 'Powers.Punch' local PowerPressup = 'Powers.Pressup' local PowerJumping = 'Jumping'
+local PlayerName = game.Players.LocalPlayer.Name local Argument = 'purchaseMultiplier' local Strength = 'Strength' local PsychicForce = 'PsychicForce' local Endurance = 'Endurance' local Swiftness = 'Swiftness' local Agility = 'Agility' 
+local Claim = 'Code.Claim' local Codes = {c1 = 'RELEASE', c2 = 'TRISTAN', c3 = 'RAINWAY'}
+while wait(0.1) do
+if _G.FarmPunching then 
+Event:FireServer(PowerPunch)
+end 
+if _G.FarmPressuping then 
+Event:FireServer(PowerPressup)
+end
+if _G.FarmJumping then 
+Event:FireServer(PowerJumping)
+end
+if _G.AutoUpgradeStrength then 
+Event:FireServer(PlayerName, Argument, Strength)
+end 
+if _G.AutoUpgradePsychicForce then 
+Event:FireServer(PlayerName, Argument, PsychicForce)
+end 
+if _G.AutoUpgradeEndurance then 
+Event:FireServer(PlayerName, Argument, Endurance)
+end 
+if _G.AutoUpgradeSwiftness then 
+Event:FireServer(PlayerName, Argument, Swiftness)
+end 
+if _G.AutoUpgradeAgility then 
+Event:FireServer(PlayerName, Argument, Agility)
+end
+end
+if _G.ReedemCodes then 
+Function:InvokeServer(Claim, Codes.c1)
+wait(0.1)
+Function:InvokeServer(Claim, Codes.c2)
+wait(0.1)
+Function:InvokeServer(Claim, Codes.c3)
+wait(0.1)
+end
