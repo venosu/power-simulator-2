@@ -1,6 +1,6 @@
 local Event = game.ReplicatedStorage.RemoteEvent
 local Function = game.ReplicatedStorage.RemoteFunction
-local PowerPunch = 'Powers.Punch' local PowerPressup = 'Powers.Pressup' local PowerJumping = 'Jumping'
+local PowerPunch = 'Powers.Punch' local PowerPressup = 'Powers.Pressup' local PowerJumping = 'Jumping' local PowerMeditate = 'Meditate.ChangeState'
 local PlayerName = game.Players.LocalPlayer.Name local Argument = 'purchaseMultiplier' local Strength = 'Strength' local PsychicForce = 'PsychicForce' local Endurance = 'Endurance' local Swiftness = 'Swiftness' local Agility = 'Agility' 
 local Claim = 'Code.Claim' local Codes = {c1 = 'RELEASE', c2 = 'TRISTAN', c3 = 'RAINWAY'}
 while wait(0.1) do
@@ -12,6 +12,11 @@ Event:FireServer(PowerPressup)
 end
 if _G.FarmJumping then 
 Event:FireServer(PowerJumping)
+end
+if _G.FarmMeditating then 
+Event:FireServer(PowerMeditate, true)
+elseif not _G.FarmMeditating then 
+Event:FireServer(PowerMeditate)
 end
 if _G.AutoUpgradeStrength then 
 Event:FireServer(PlayerName, Argument, Strength)
